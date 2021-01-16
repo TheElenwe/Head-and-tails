@@ -1,0 +1,13 @@
+{
+  "name": "head.and.tails",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^2.0.7",
+    "prompt-sync": "^4.2.0"
+  },
+  "scripts": {
+    "start": "nodemon main.js"
+  }
+}
