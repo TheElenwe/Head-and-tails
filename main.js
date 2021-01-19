@@ -1,11 +1,28 @@
-const prompt = require("prompt-sync")({ sigint: true });
+let readlineSync = require("readline-sync");
 
-sum = 0;
-entry = Number(prompt("which side is the coin: "));
-while (entry >= 0) {
-  sum += entry;
-  entry = Number(prompt("which side is the coin"));
+let entry;
+let headSum = 0;
+let tailSum = 0;
+
+while (true) {
+  entry = readlineSync.question("which side is the coin \n");
   if (entry === "stop") {
+    break;
+  }
+
+  if (entry === "head") {
+    headSum++;
+  } else if (entry === "tail") {
+    tailSum++;
   }
 }
-console.log(`The sum is ${sum}`);
+
+console.log("User has input head ",headSum,"times. And tail ",tailSum," times.");
+
+const totalSum = headSum + tailSum;
+const sumPercent = 100 / totalSum;
+const headPercent = headSum * sumPercent;
+const tailPercent = tailSum * sumPercent;
+
+console.log("Head percent: ", headPercent);
+console.log("Tail percent: ", tailPercent);
